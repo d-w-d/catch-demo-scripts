@@ -46,9 +46,9 @@ if data['queued']:
             # this message is for us, print the text
             print(message_data['text'], file=sys.stderr)
 
-            # Message status may be 'success', 'error', 'running', 'queued'.
-            if message_data['status'] in ['error', 'success']:
-                break
+        # Message status may be 'success', 'error', 'running', 'queued'.
+        if message_data['status'] in ['error', 'success']:
+            break
 
 # 'results' is the URL to the search results
 res = requests.get(data['results'])
@@ -56,4 +56,4 @@ res = requests.get(data['results'])
 # response is JSON formatted
 data = res.json()
 
-print(json.dumps(data))
+print(data)
